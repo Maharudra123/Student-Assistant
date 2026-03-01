@@ -9,8 +9,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://student-assistant-frontend.vercel.app/",
-  "https://student-assistant-frontend-l5n5olcoe-rudras-projects-4ea4a5d9.vercel.app/"
+  "https://student-assistant-frontend.vercel.app",
+  "https://student-assistant-frontend-l5n5olcoe-rudras-projects-4ea4a5d9.vercel.app"
 ];
 
 app.use(
