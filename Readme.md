@@ -1,6 +1,6 @@
 #  AI-Powered Student Assistant
 
-**Live Demo:** [https://student-assistant-frontend-nttn6tfxt-rudras-projects-4ea4a5d9.vercel.app/]  
+**Live Demo:** [https://student-assistant-frontend.vercel.app/]  
 **Backend API:** https://student-assistant-backend-dwtz.onrender.com
 
 ---
