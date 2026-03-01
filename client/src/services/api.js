@@ -8,3 +8,8 @@ export const generateAIResponse = async (prompt, mode) => {
   const { data } = await API.post("/api/ai/generate", { prompt, mode });
   return data;
 };
+
+export const getHistoryData = async () => {
+  const { data } = await API.get("/api/ai/history");
+  return data;
+};
