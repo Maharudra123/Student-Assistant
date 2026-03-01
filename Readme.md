@@ -287,6 +287,16 @@ This project demonstrates:
 
 ---
 
+## 🌟 Bonus Feature: Full-Stack Session History
+
+To elevate the user experience beyond a standard API wrapper, this application includes a fully integrated database history feature:
+* **Persistent Storage:** Every interaction (prompt, task mode, and AI response) is automatically saved to a **MongoDB** database using a structured Mongoose schema.
+* **Collapsible UI Sidebar:** A sleek, ChatGPT-style sidebar allows users to view their most recent queries, sorted automatically by timestamp.
+* **One-Click Restore:** Clicking any past interaction in the sidebar instantly restores the exact prompt, task mode, and AI response into the main viewing window for seamless review.
+
+
+---
+
 # 👨‍💻 Author
 
 **Maharudra Ganjure**  
