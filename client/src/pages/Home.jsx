@@ -14,8 +14,8 @@ export default function Home() {
 
   const handleModeChange = (newMode) => {
     setMode(newMode);
-    setResponse(""); // Clear the old response
-    setError(""); // Clear any old errors
+    setResponse(""); 
+    setError(""); 
   };
 
   const handleSubmit = async () => {
@@ -26,7 +26,6 @@ export default function Home() {
 
     try {
       const data = await generateAIResponse(prompt, mode);
-      // We are mapping this to data.result to match the backend we will build next
       setResponse(data.result);
     } catch (err) {
       setError(

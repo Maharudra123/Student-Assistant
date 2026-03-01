@@ -6,7 +6,6 @@ export default function ResponseDisplay({ response, mode }) {
   // For MCQ mode, parse and render structured JSON
   if (mode === "mcq") {
     try {
-      // Hybrid fix: Strip potential markdown code blocks from Gemini's JSON output
       const cleanJsonStr = response
         .replace(/```json/gi, "")
         .replace(/```/g, "")
@@ -29,7 +28,6 @@ export default function ResponseDisplay({ response, mode }) {
               </p>
               <ul className="space-y-2">
                 {q.options.map((opt, j) => {
-                  // Check if the option starts with the answer or matches it exactly
                   const isCorrect =
                     opt.startsWith(q.answer) || opt === q.answer;
                   return (
@@ -53,7 +51,6 @@ export default function ResponseDisplay({ response, mode }) {
       );
     } catch (err) {
       console.error("Failed to parse MCQ JSON:", err);
-      // fallback to markdown if JSON parse fails
     }
   }
 

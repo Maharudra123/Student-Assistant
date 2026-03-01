@@ -1,6 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-// ─── Prompt Builder ──────────────────────────────────────────────────────────
 const buildPrompt = (userInput, mode) => {
   const guardrail = `If you are uncertain about any part of this, explicitly say "I'm not fully certain, but..." rather than guessing. If the topic is inappropriate or completely nonsensical, reply only with "I cannot fulfill this request."`;
 
@@ -80,19 +79,14 @@ ${userInput}
   return prompts[mode] || prompts.explain;
 };
 
-// ─── Main Service Function ────────────────────────────────────────────────────
 const generateResponse = async (userInput, mode) => {
   try {
-    // Initialize Gemini (Ensure GEMINI_API_KEY is in your .env file)
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-    // We use gemini-1.5-flash as it is lightning fast and perfect for these tasks
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    // Build the strict prompt
     const structuredPrompt = buildPrompt(userInput, mode);
 
-    // Call the model
     const result = await model.generateContent(structuredPrompt);
     return result.response.text();
   } catch (error) {
