@@ -21,7 +21,7 @@ app.use((_, res) => res.status(404).json({ message: "Route not found" }));
 cron.schedule("*/10 * * * *", async () => {
   // Pings the server every 10 minutes (just before the 15-minute sleep timer)
   try {
-    await axios.get("https://your-render-app-url.onrender.com/health");
+    await axios.get("https://student-assistant-backend-dwtz.onrender.com/health");
     console.log("Self-ping successful. Server kept alive.");
   } catch (error) {
     console.error("Self-ping failed:", error.message);
